@@ -172,7 +172,7 @@ import os
 from ccfnet import Net
 # from Anet import Net
 from pathlib import Path as pa
-EXP_NAME='dino1'
+EXP_NAME='ccfnet'
 JSON_METHOD = './PySODEvalToolkit/cod_method.json'
 JSON_DATA = './PySODEvalToolkit/cod_dataset.json'
 
