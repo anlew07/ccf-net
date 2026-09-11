@@ -169,7 +169,7 @@ def cal_cod_metrics(js_m, js_d):
 
 
 import os
-from dino11_net import Net
+from ccfnet import Net
 # from Anet import Net
 from pathlib import Path as pa
 EXP_NAME='dino1'
