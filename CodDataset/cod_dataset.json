@@ -1,0 +1,46 @@
+{
+  "COD10K": {
+    "root": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/COD10K",
+    "Imgs": {
+      "path": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/COD10K/Imgs",
+      "suffix": ".jpg"
+    },
+    "mask": {
+      "path": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/COD10K/GT",
+      "suffix": ".png"
+    }
+  },
+    "CHAMELEON": {
+      "root": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/CHAMELEON",
+      "Imgs": {
+        "path": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/CHAMELEON/Imgs",
+        "suffix": ".jpg"
+      },
+      "mask": {
+        "path": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/CHAMELEON/GT",
+        "suffix": ".png"
+      }
+    },
+    "CAMO": {
+      "root": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/CAMO",
+      "Imgs": {
+        "path": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/CAMO/Imgs",
+        "suffix": ".jpg"
+      },
+      "mask": {
+        "path": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/CAMO/GT",
+        "suffix": ".png"
+      }
+    },
+    "NC4K": {
+      "root": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/NC4K",
+      "Imgs": {
+        "path": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/NC4K/Imgs",
+        "suffix": ".jpg"
+      },
+      "mask": {
+        "path": "/root/shared-nvme/Weakly-Supervised-Camouflaged-Object-Detection-with-Scribble-Annotations/CodDataset/test/NC4K/GT",
+        "suffix": ".png"
+      }
+    }
+}
