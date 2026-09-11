@@ -2,6 +2,9 @@
 # coding=utf-8
 
 import sys
+from pathlib import Path
+REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, "/root/shared-nvme/dinov3-main")
 
 from functools import partial
@@ -23,8 +26,8 @@ from data import dataset
 import logging as logger
 from lib.data_prefetcher import DataPrefetcher
 
-from dino1_loss import train_loss
-from backbone_dinov1_dino_net import Net
+from loss import train_loss
+from B2_5_8_11_dino_net import Net
 from tools import *
 
 
@@ -85,6 +88,7 @@ def should_validate(epoch_idx: int) -> bool:
     e = epoch_idx + 1
     if e <= 80:
         return e % 10 == 0
+        # return e % 1 == 0
     elif e <= 100:
         return e % 5 == 0
     else:
@@ -292,15 +296,16 @@ def train(Dataset, Network, cfg, train_loss_fn, start_from=0):
 
 if __name__ == '__main__':
     run_time = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    EXP_NAME = f"backbone_dinov1_dino_net—_run_{time}"
+    EXP_NAME = f"B2_5_8_11_dino_net_run_{time}"
 
     # train_loss 固定参数
     cfg_list = [.15, 60, 16, 1]
+    # cfg_list = [.15, 1, 16, 1]
     w_ft, ft_st, topk, w_ftp = cfg_list
 
     cfg = dataset.Config(
         datapath=f'{root}',
-        savepath=f'./out_backbone_dinov1_dino_net_/{EXP_NAME}/',
+        savepath=f'./out_B2_5_8_11_dino_net_/{EXP_NAME}/',
         mode='train',
         batch=16,
         lr=1e-3,          # 这个是 optimizer 初始化用的，真正 lr 会被 triangle 覆盖
@@ -324,6 +329,7 @@ if __name__ == '__main__':
         w_l2g=0.3,
         l_me=0.05,
         me_st=20,
+        # me_st=1,
         multi_sc=0
     )
 

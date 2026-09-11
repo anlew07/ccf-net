@@ -2,6 +2,9 @@
 # coding=utf-8
 
 import sys
+from pathlib import Path
+REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, "/root/shared-nvme/dinov3-main")
 
 from functools import partial
@@ -23,8 +26,8 @@ from data import dataset
 import logging as logger
 from lib.data_prefetcher import DataPrefetcher
 
-from dino1_loss import train_loss
-from cp_cof_0_0_dino import Net
+from loss import train_loss
+from cp_cof_1_0_dino import Net
 from tools import *
 
 
@@ -291,7 +294,7 @@ def train(Dataset, Network, cfg, train_loss_fn, start_from=0):
 
 if __name__ == '__main__':
     run_time = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    EXP_NAME = f"cp_cof_0_0_dino{run_time}"
+    EXP_NAME = f"cp_cof_1_0_dino{run_time}"
 
     # train_loss 固定参数
     cfg_list = [.15, 60, 16, 1]
@@ -299,7 +302,7 @@ if __name__ == '__main__':
 
     cfg = dataset.Config(
         datapath=f'{root}',
-        savepath=f'./cp_cof_0_0_dino/{EXP_NAME}/',
+        savepath=f'./cp_cof_1_0_dino/{EXP_NAME}/',
         mode='train',
         batch=16,
         lr=1e-3,          # 这个是 optimizer 初始化用的，真正 lr 会被 triangle 覆盖

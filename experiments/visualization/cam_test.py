@@ -3,6 +3,9 @@
 
 import os
 import sys
+from pathlib import Path
+REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO_ROOT))
 import time
 import subprocess
 import logging as logger
@@ -32,14 +35,14 @@ from data import dataset
 
 # 你的网络文件名按实际改（例如：from Bnet_dinov3 import Net）
 # from dino1_net import Net
-# from cp_cof_1_1_dino_edge import Net
-# from cp_cof_1_1_dino_sem import Net
-# from cp_cof_0_0_dino import Net
+# from experiments.module_ablation.cp_cof_1_1_dino_edge import Net
+# from experiments.module_ablation.cp_cof_1_1_dino_sem import Net
+# from experiments.module_ablation.cp_cof_0_0_dino import Net
 
-from backbone_dinov2_dino_net import Net
-# from backbone_dinov1_dino_net import Net
-# from B2_5_8_11_dino_net import Net
-# from 5_8_11_dino_net import Net
+from experiments.backbone_ablation.backbone_dinov2_dino_net import Net
+# from experiments.backbone_ablation.backbone_dinov1_dino_net import Net
+# from experiments.feature_ablation.B2_5_8_11_dino_net import Net
+# from experiments.feature_ablation.A5_8_11_dino_net import Net
 
 
 # ✅ 你的 visualizer（已经按你要求：不保存 raw_tensors.pt）
